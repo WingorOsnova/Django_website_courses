@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} All Courses {% endblock %}
+{% block content%}
+<table class="table mt-10 table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Students_qty</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cource in courses %}
+        <tr>
+            <td><a href="{% url "shop:single_course" cource.id %}">
+                {{ cource.title }}
+            </a></td>
+            <td>{{ cource.category }}</td>
+            <td>{{ cource.price }} $</td>
+            <td>{{ cource.students_qty }}</td>
+            <td class="text-center"><button type="button" class="btn btn-success">Buy</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

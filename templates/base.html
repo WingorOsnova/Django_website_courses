@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            color: black;
+            background-color:rgb(71, 76, 88);
+        }
+        .mt-10 {
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-dark fixed-top bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url "shop:index"%}">Courses Shop</a>
+          <span class="navbar-text">
+            <a href="/admin/" class="me-5" target="_blank">Admin</a>
+            <a href="/api/v1/" class="me-2" target="_blank">API</a>
+        </span>
+        </div>
+      </nav>
+ 
+    <main class="container" style="padding-top: 48px;">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
